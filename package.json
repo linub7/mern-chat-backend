@@ -5,16 +5,18 @@
   "main": "app.js",
   "scripts": {
     "dev": "nodemon -r tsconfig-paths/register src/app.ts",
-    "lint:check": "eslint 'src/**/*.ts'",
-    "lint:fix": "eslint 'src/**/*.ts' --fix",
-    "prettier:check": "prettier --check 'src/**/*.{ts,json}'",
-    "prettier:fix": "prettier --write 'src/**/*.{ts,json}'"
+    "lint:check": "eslint src/**/*.ts",
+    "lint:fix": "eslint src/**/*.ts --fix",
+    "prettier:check": "prettier --check src/**/*.{ts,json}",
+    "prettier:fix": "prettier --write src/**/*.{ts,json}",
+    "build": "tsc --project tsconfig.json && tsc-alias -p tsconfig.json"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@socket.io/redis-adapter": "^8.1.0",
+    "bullmq": "^3.12.0",
     "compression": "^1.7.4",
     "cookie-session": "^2.0.0",
     "cors": "^2.8.5",
@@ -27,7 +29,8 @@
     "mongoose": "^7.1.0",
     "redis": "^4.6.6",
     "socket.io": "^4.6.1",
-    "typescript": "^5.0.4"
+    "typescript": "^5.0.4",
+    "typescript-transform-paths": "^3.4.6"
   },
   "devDependencies": {
     "@types/bunyan": "^1.8.8",
@@ -42,6 +45,7 @@
     "eslint-config-prettier": "^8.6.0",
     "prettier": "^2.8.4",
     "ts-node": "^10.9.1",
+    "tsc-alias": "^1.8.6",
     "tsconfig-paths": "^4.2.0"
   }
 }
