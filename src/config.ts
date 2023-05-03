@@ -14,6 +14,7 @@ class Config {
   public CLOUDINARY_NAME: string | undefined;
   public CLOUDINARY_KEY: string | undefined;
   public CLOUDINARY_SECRET: string | undefined;
+  public SALT_ROUND: string | undefined;
 
   private readonly DEFAULT_DATABASE_URL = 'mongodb://127.0.0.1:27017/chatty';
 
@@ -28,6 +29,7 @@ class Config {
     this.CLOUDINARY_NAME = process.env.CLOUDINARY_NAME || '';
     this.CLOUDINARY_KEY = process.env.CLOUDINARY_KEY || '';
     this.CLOUDINARY_SECRET = process.env.CLOUDINARY_SECRET || '';
+    this.SALT_ROUND = process.env.SALT_ROUND || '';
   }
 
   public validateConfig(): void {
